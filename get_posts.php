@@ -29,7 +29,7 @@ function time_elapsed_string($datetime, $full = false) {
 }
 
 if(!file_exists('cache/' . date('d-m-Y-H') . '.json')) {
-    $amount = '10';
+    $amount = '15';
     $page = '1';
     $url = 'https://www.berkeleyside.com/wp-json/wp/v2/posts?per_page=' . $amount . '&page=' . $page;
 
