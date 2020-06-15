@@ -1,0 +1,350 @@
+/* SETUP */
+
+:root {
+    --light-blue: #3F9EEA;
+    --medium-blue: #0053A5;
+    --dark-blue: #003467;
+    
+    --orange: #F65117;
+    --dark-orange: #BD3100;
+    --yellow: #FFD900;
+    --red: #C1272D;
+
+    --teal: #04BFBF;
+    
+    --light-gray: #EBEBEB;
+    --gray: #777777;
+    --dark-gray: #404040;
+    --medium-gray: #AAAAAA;
+
+    --serif: 'Source Serif Pro', serif;
+    --sans: 'Source Sans Pro', sans-serif;
+
+    --gap: 15px;
+}
+
+::selection {
+    background-color: var(--light-blue);
+    color: white;
+}
+
+i.material-icons {
+    user-select: none;
+}
+
+.ripple {
+    transition: all 0.2s;
+}
+
+.ripple-wrapper {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' style='isolation:isolate' viewBox='529 294 243 243'%3E%3Ccircle cx='650.5' cy='415.5' r='121.5' fill='%23EBEBEB'/%3E%3C/svg%3E");
+    background-size: 0%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+html {
+    background-color: var(--light-gray);
+}
+
+body {
+    margin: 0;
+    overscroll-behavior: none;
+}
+
+.main-content {
+    max-width: 375px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.main-content > .app-screen > * {
+    padding: var(--gap);
+}
+
+.app-screen {
+    display: none;
+}
+
+.app-screen.active-screen {
+    display: initial;
+}
+
+h1,
+p, p > a {
+    font-family: var(--serif);
+}
+
+h2, h3, h4, h5, h6,
+span, a {
+    font-family: var(--sans);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+p > a,
+.post-content a {
+    box-shadow: inset 0px -3px 0px 0px rgba(0, 142, 255, 0.8);
+    transition: background 0.2s;
+}
+
+p > a:hover,
+.post-content a:hover {
+    background: rgba(0, 142, 255, 0.2);
+}
+
+span > a {
+    transition: color 0.2s;
+}
+
+span > a:hover {
+    color: var(--light-blue);
+}
+
+/* APP HEADER */
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px var(--gap);
+    background-color: var(--light-blue);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.above-header > img {
+    width: 100%;
+    display: block;
+}
+
+.app-header > .header-right {
+    width: 32px;
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.app-header > .header-left {
+    width: 50%;
+}
+
+.logo {
+    width: 100%;
+    margin-top: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* APP BOTTOM BAR */
+
+.app-bottom-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--gap);
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px 1px rgba(0, 0, 0, 0.06);
+    padding: 0;
+}
+
+.bottom-bar-item {
+    text-align: center;
+    cursor: pointer;
+    padding: var(--gap);
+}
+
+.bottom-bar-item.active-page > i {
+    color: var(--light-blue);
+}
+
+.bottom-bar-item > i {
+    display: block;
+}
+
+.bottom-bar-item > span {
+    display: block;
+    font-size: 13px;
+    color: var(--gray);
+    display: none;
+}
+
+/* POST LISTING */
+
+.post-title {
+    font-size: 22px;
+    margin: 0;
+    transition: color 0.2s;
+}
+
+.post-title:hover {
+    color: var(--dark-gray);
+}
+
+.post {
+    padding-bottom: var(--gap);
+    border-bottom: solid 1px var(--light-gray);
+}
+
+.post:last-child {
+    border-bottom: none;
+}
+
+.post-top,
+.post-bottom,
+.post-bottom > .comment-count {
+    display: flex;
+    align-items: center;
+}
+
+.post-bottom > .post-byline,
+.post-bottom > .comment-count {
+    width: 50%;
+}
+
+.post-top > .location {
+    text-transform: uppercase;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.post-top > .location > i {
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+.post-top > .date {
+    text-align: right;
+    color: var(--medium-gray);
+    white-space: nowrap;
+}
+
+.post-image {
+    width: 100%;
+    user-select: none;
+}
+
+.post-byline,
+.post-byline > a {
+    font-family: var(--serif);
+}
+
+.post-middle {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: var(--gap);
+    align-items: center;
+    margin: var(--gap) 0;
+}
+
+.post-bottom > .comment-count {
+    margin-left: auto;
+    width: fit-content;
+}
+
+.post-bottom > .comment-count > i {
+    font-size: 20px;
+    margin-right: 7px;
+    transition: color 0.2s;
+}
+
+.post-bottom > .comment-count:hover > i {
+    color: var(--light-blue);
+}
+
+/* POST TEMPLATE */
+
+.post-content > p {
+    font-size: 17px;
+}
+
+.post-template iframe {
+    display: none;
+}
+
+.post-template iframe[allowfullscreen] {
+    display: initial;
+    width: 100%;
+    height: 194px;
+}
+
+.post-template img {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-template .wp-caption.alignnone {
+    margin: 0;
+}
+
+.post-template .wp-caption-text {
+    font-family: var(--sans);
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0 0 var(--gap) 0;
+}
+
+.post-template aside {
+    background-color: var(--light-gray);
+    padding: var(--gap);
+    font-family: var(--sans);
+}
+
+.post-template aside figcaption.wp-caption-text {
+    margin: 0;
+}
+
+.post-template blockquote {
+    margin-left: calc(var(--gap) * 2);
+    margin-right: 0;
+}
+
+.post-template .post-byline {
+    font-family: var(--sans);
+}
+
+.post-template .post-date {
+    color: var(--medium-gray);
+}
+
+.post-template .post-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--gap);
+}
+
+.post-template .post-meta-left {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 99px);
+}
+
+.post-template .post-meta-right {
+    display: flex;
+    align-items: center;
+}
+
+.post-template .post-meta-right img {
+    width: 30px;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+.post-template .post-title {
+    margin-bottom: var(--gap);
+}
+
+.post-template .post-title:hover {
+    color: black;
+}
