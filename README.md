@@ -1,5 +1,5 @@
 # Berkeleyside App
-An unofficial and unaffiliated app for Berkeleyside using the WordPress REST API. This app follows Berkeleyside's [branding guidelines](https://www.berkeleyside.com/style-guide-branding) as best as possible.
+An unofficial and unaffiliated app for Berkeleyside using the WordPress REST API. This app follows Berkeleyside's [branding guidelines](https://www.berkeleyside.com/style-guide-branding) as best as possible. Some cool features include being able to recognize locations tagged in articles and displaying comment counts.
 
 ![](https://i.imgur.com/oJERZqw.png)
 The homescreen with filters
