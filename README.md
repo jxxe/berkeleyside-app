@@ -39,3 +39,5 @@ The homescreen with search
 - [ ] Improved settings
 - [ ] Progressive web app
 - [x] Hash history navigation
+- [ ] Filters
+- [ ] In-app search
