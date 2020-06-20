@@ -30,6 +30,7 @@ The homescreen with search
 - [x] Caching articles
 - [x] Single article screen
   - [ ] Better CSS styling, especially for asides
+  - [x] Sharing buttons
 - [x] Parse comment count from Yoast header
 - [ ] Citizen reporter page
   - [ ] Leaderboard
@@ -37,3 +38,4 @@ The homescreen with search
   - [ ] Text/location tip submission
 - [ ] Improved settings
 - [ ] Progressive web app
+- [x] Hash history navigation
